@@ -8,7 +8,11 @@ export class AuthResolver {
     constructor(
         private authService: AuthService
     ) {}
-
+    
+    /**
+     * Authenticate an user
+     * @param data 
+     */
     @Mutation(() => AuthType)
     public async login(
         @Args('data') data: AuthInput

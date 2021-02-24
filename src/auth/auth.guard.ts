@@ -4,6 +4,9 @@ import { AuthGuard } from "@nestjs/passport";
 import { Request } from "express";
 
 @Injectable()
+/**
+ * Guard to protect the routes of need be authenticated
+ */
 export class GqlAuthGuard extends AuthGuard('jwt') {
   getRequest(context: ExecutionContext): Request {
     const ctx = GqlExecutionContext.create(context);
